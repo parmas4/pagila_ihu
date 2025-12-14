@@ -19,7 +19,7 @@
 
 # # Import libraries
 
-# In[7]:
+# In[2]:
 
 
 # Import libraries
@@ -31,7 +31,7 @@ import os
 print('Libraries imported successfully')
 
 
-# In[8]:
+# In[3]:
 
 
 # Set the environment variable for Google Cloud credentials
@@ -45,7 +45,7 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "C:\\Users\\AΘΑΝΑΣΙΑ\\Docu
 # -- YOUR CODE GOES ABOVE THIS LINE
 
 
-# In[9]:
+# In[4]:
 
 
 # Set your Google Cloud project ID and BigQuery dataset details
@@ -61,7 +61,7 @@ table_id = 'stg_payment' # Modify the necessary table name: stg_customer, stg_ci
 
 # # SQL Query
 
-# In[10]:
+# In[5]:
 
 
 # Create a BigQuery client
@@ -82,7 +82,7 @@ with base as (
         , customer_id
         , staff_id
         , rental_id
-        , amount as customer_amount
+        , amount as payment_amount
         , payment_date 
    FROM base
   )
@@ -101,7 +101,7 @@ df.head()
 
 # # Write to BigQuery
 
-# In[11]:
+# In[6]:
 
 
 # Define the full table ID
@@ -115,14 +115,14 @@ schema = [
     bigquery.SchemaField('customer_id', 'INTEGER'),
     bigquery.SchemaField('staff_id', 'INTEGER'),
     bigquery.SchemaField('rental_id', 'INTEGER'),
-    bigquery.SchemaField('customer_amount', 'NUMERIC'),
+    bigquery.SchemaField('payment_amount', 'NUMERIC'),
     bigquery.SchemaField('payment_date', 'DATETIME'),
     ]
 
 # -- YOUR CODE GOES ABOVE THIS LINE
 
 
-# In[12]:
+# In[7]:
 
 
 # Create a BigQuery client
