@@ -1,0 +1,13 @@
+a) Using rep_revenue_per_period
+
+i) 3.5183767%
+
+ii) Tuesday (με average_revenue 19.46137931)
+
+
+
+b) Using rep_revenue_per_customer_and_period
+
+i) 569, 200, 204, 80, 178 (customer_id's) 
+
+ii) 2022-05-01 (με 595 unique_customers)
